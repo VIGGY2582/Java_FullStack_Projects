@@ -1,0 +1,194 @@
+Project Name: City Connector
+
+I am building a full-stack web application using:
+
+Frontend: React (Vite)
+Backend: Node.js + Express
+Database: PostgreSQL
+
+I want you to build the entire project step-by-step and automatically install all required libraries and dependencies. Modify the original files wherever necessary instead of creating unnecessary duplicate files.
+
+--------------------------------------
+PROJECT GOAL
+--------------------------------------
+City Connector is a civic issue reporting platform where:
+
+- Citizens can register/login
+- Submit complaints with image & location
+- Track complaint status
+- View complaint history
+
+Admins can:
+- View all complaints
+- Assign complaints to departments
+- Update complaint status
+- View analytics dashboard
+
+Departments can:
+- View assigned complaints
+- Update progress
+- Mark as resolved
+
+--------------------------------------
+BACKEND REQUIREMENTS
+--------------------------------------
+
+1) Initialize Node.js project
+2) Install required packages:
+
+Core:
+- express
+- cors
+- dotenv
+- pg
+- bcrypt
+- jsonwebtoken
+- multer
+
+Optional:
+- nodemailer
+- morgan
+- helmet
+
+Dev:
+- nodemon
+
+3) Create structured folder architecture:
+
+backend/
+  controllers/
+  routes/
+  models/
+  middleware/
+  config/
+  utils/
+  server.js
+
+4) Setup PostgreSQL connection in config/db.js
+
+5) Create tables:
+
+Users:
+- id (PK)
+- name
+- email (unique)
+- password
+- role (citizen/admin/department)
+- phone
+- created_at
+
+Departments:
+- id
+- department_name
+- email
+
+Complaints:
+- id
+- title
+- description
+- category
+- image_url
+- location
+- status (Submitted, Assigned, In Progress, Resolved, Rejected)
+- priority
+- user_id (FK)
+- department_id (FK)
+- created_at
+- updated_at
+
+Feedback:
+- id
+- complaint_id (FK)
+- rating
+- comments
+- created_at
+
+Notifications:
+- id
+- user_id (FK)
+- message
+- is_read
+- created_at
+
+6) Implement:
+
+- Authentication (JWT)
+- Role-based middleware
+- Register API
+- Login API
+- Create complaint API
+- Get complaints API
+- Update status API
+- Assign department API
+- Feedback API
+- Notification system
+
+7) Use proper MVC structure
+8) Use async/await
+9) Add error handling middleware
+10) Secure passwords with bcrypt
+
+--------------------------------------
+FRONTEND REQUIREMENTS
+--------------------------------------
+
+1) Initialize React using Vite
+2) Install:
+
+- axios
+- react-router-dom
+- context API
+- tailwindcss (configure fully)
+- jwt-decode (optional)
+
+3) Create folder structure:
+
+frontend/
+  src/
+    components/
+    pages/
+    services/
+    context/
+    hooks/
+    App.jsx
+
+4) Pages:
+
+- Login
+- Register
+- Dashboard (citizen)
+- Admin Dashboard
+- Department Dashboard
+- Complaint Form
+- Complaint Details
+- Feedback Page
+
+5) Connect backend APIs using Axios
+6) Store JWT in localStorage
+7) Protect routes using role-based routing
+8) Create responsive UI with Tailwind
+9) Modify App.jsx and main.jsx properly
+10) Replace default Vite template code with actual project code
+
+--------------------------------------
+EXTRA REQUIREMENTS
+--------------------------------------
+
+- Automatically install all required dependencies
+- Update package.json scripts
+- Configure environment variables (.env)
+- Use clean code practices
+- Ensure backend runs on port 5000
+- Ensure frontend runs on port 5173
+- Make sure both connect properly
+
+--------------------------------------
+IMPORTANT
+--------------------------------------
+
+- Modify original files where required
+- Do not leave placeholder code
+- Ensure project runs without errors
+- Provide commands to start both frontend and backend
+
+Build the project fully structured and production-ready.
